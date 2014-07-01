@@ -1,0 +1,111 @@
+<head>
+  <title>SurpriseFilm</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="content">
+      <div id="start-screen" class="screen">
+        {{> start_screen}}
+      </div>
+      <div id="video-screen" class="screen">
+        {{> video}}
+      </div>
+      <div id="error-screen" class="screen">
+        {{> error}}
+      </div>
+      <div id="end-screen" class="screen">
+        {{> end_screen}}
+      </div>
+      <div id="about-screen" class="screen">
+        {{> about_screen}}
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    Built with love by <a href="http://www.joao-lago.com" target="_blank">João Lago</a> in Berlin, 2014
+  </div>
+</body>
+
+<template name="video">
+  <div id="video-wrapper">
+    <div id="player"></div>
+  </div>
+  <a href="javascript:void(0)" class="btn reset">Back to Start</a>
+</template>
+
+<template name="error">
+  <div class="error">
+    <h2>We seem to have found no videos, sorry :S</h2>
+    <h3>Maybe try again?</h3>
+    <a href="javascript:void(0)" class="btn reset">Back to Start</a>
+  </div>
+</template>
+
+<template name="start_screen">
+  <h1>SurpriseFilm</h1>
+  <h2>Not sure what movie to watch?</h2>
+  <h3>No problem, we'll sort you out!</h3>
+  <h3 class="section-title">Authors</h3>
+  <span class="note">Pick an author so we'll only grab trailers from them</span>
+  <ul class="authors">
+    <li class="author selected" data-name="movieclipsTRAILERS">movieclipsTRAILERS</li>
+    <li class="author" data-name="trailers">trailers</li>
+    <li class="author" data-name="movietrailers">movietrailers</li>
+  </ul>
+
+  <h3 class="section-title">Categories</h3>
+  <span class="note">Pick one or more categories to narrow down your selection</span>
+  <ul class="categories">
+    <li class="category" data-name="action">Action</li>
+    <li class="category" data-name="drama">Drama</li>
+    <li class="category" data-name="comedy">Comedy</li>
+    <li class="category" data-name="horror">Horror</li>
+    <li class="category" data-name="documentary">Documentary</li>
+    <li class="category" data-name="period">Period</li>
+    <li class="category" data-name="thriller">Thriller</li>
+    <li class="category" data-name="crime">Crime</li>
+    <li class="category" data-name="romantic">Romantic</li>
+  </ul>
+
+  <p class="note bottom">Or just go crazy and click the button!</p>
+  <a href="javascript:void(0)" class="btn">Get me a movie!</a>
+  <a href="#" class="about">About</a>
+  <p class="external-ref">Don't have time for a whole movie? You might want to try <a href="http://www.surprisevideo.tv" target="_blank">SurpriseVideo</a>.</p>
+</template>
+
+<template name="end_screen">
+  <h2>Feeling like watching this movie?</h2>
+  <div id="with-results">
+    <h3>Here's where you can buy or rent it:</h3>
+    <div>
+      <a id="itunes" target="_blank"><img src="Available_on_iTunes_Badge_US-UK_110x40_0824.png"/></a>
+      <a id="googleplay" target="_blank"><img src="Google_Play.png"/></a>
+      <a id="amazon" target="_blank"><img src="amazon-instant-video-logo-png.png"/></a>
+    </div>
+  </div>
+  <div id="without-results">
+    <h3>We didn't find it on a few internet renting services, maybe it's still at the theaters?</h3>
+  </div>
+  <hr>
+  <h2>Not feeling it?</h2>
+  <a href="javascript:void(0)" class="btn redo">Give me another one</a>
+  <a href="javascript:void(0)" class="btn reset">Back to Start</a>
+</template>
+
+<template name="about_screen">
+  <h1>SurpriseFilm</h1>
+  <div>
+    <h2>How this works:</h2>
+    <p>
+      I built this because I got frustrated with the way I used to choose a movie when I didn't know exactly what to watch. I'd go on Apple tv and spend a hour flipping through posters and not really bothering to click on to check a trailer.
+    </p>
+    <p>
+      This website gives you a trailer at random and then tries to give you links where you can go and watch it legally. It might not work 100% of the time, but hopefully it'll let you know about movies that you weren't aware of or didn't remember existed.
+    </p>
+    <p>
+      If you feel like helping out, <a href="mailto:support@surprisefilm.tv" target="_blank">get in touch</a>! I am open to suggestions on new features, bugs found, or whatever you want to talk about!
+    </p>
+    <button class="btn reset">Back to Start</button>
+  </div>
+</template>
